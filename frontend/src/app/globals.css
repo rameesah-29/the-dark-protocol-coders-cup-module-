@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-cinzel-dec: 'Cinzel Decorative', 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Theme colors inspired by the Hogwarts Night Poster */
+    --color-midnight-base: #060c18;
+    --color-midnight-card: #0a1526;
+    --color-midnight-border: #c59b27;
+    --color-gold-burnished: #d4af37;
+    --color-gold-bright: #f3d069;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #060c18;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+  font-synthesis: none;
+  text-shadow: none;
+}
+
+.font-cinzel-dec {
+  font-family: var(--font-cinzel-dec);
+  font-synthesis: none;
+  text-shadow: none;
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Midnight Navy & Gold Card Classes */
+.bg-midnight-card {
+  background-color: rgba(10, 21, 38, 0.88);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(2, 6, 14, 0.8), inset 0 1px 0 rgba(243, 208, 105, 0.15);
+}
+
+.bg-midnight-card-hover:hover {
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 12px 35px -5px rgba(2, 6, 14, 0.9), 0 0 20px rgba(197, 155, 39, 0.15);
+}
+
+.border-gold-filigree {
+  border: 1px solid rgba(197, 155, 39, 0.4);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fef9c3 0%, #f3d069 40%, #c59b27 80%, #9a7318 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* 3D Book perspective & physical realism */
+.perspective-book {
+  perspective: 2400px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Realistic physical book layered page edges (gilded gold/antique paper deckle) */
+.book-edge-shadow {
+  box-shadow: 
+    1px 0 0 #c2a677,
+    2px 0 0 #b3935e,
+    3px 0 0 #d9be8b,
+    4px 0 0 #8c6e3d,
+    5px 0 0 #ebd5a7,
+    6px 0 0 #b3935e,
+    7px 0 0 #8c6e3d,
+    8px 0 0 #d9be8b,
+    9px 0 0 #6e5428,
+    10px 0 0 #c2a677,
+    11px 0 0 #ebd5a7,
+    12px 0 0 #57401c,
+    16px 20px 40px rgba(0, 0, 0, 0.85);
+}
+
+.book-bottom-edge-shadow {
+  box-shadow:
+    0 1px 0 #c2a677,
+    0 2px 0 #b3935e,
+    0 3px 0 #d9be8b,
+    0 4px 0 #8c6e3d,
+    0 5px 0 #ebd5a7,
+    0 6px 0 #b3935e,
+    0 7px 0 #8c6e3d,
+    0 8px 0 #57401c,
+    0 20px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* Gutter shadow in open double-page spread */
+.book-gutter-shadow {
+  background: linear-gradient(
+    90deg,
+    rgba(38, 24, 12, 0.45) 0%,
+    rgba(38, 24, 12, 0.25) 3%,
+    rgba(38, 24, 12, 0.08) 8%,
+    transparent 14%,
+    transparent 86%,
+    rgba(38, 24, 12, 0.08) 92%,
+    rgba(38, 24, 12, 0.25) 97%,
+    rgba(38, 24, 12, 0.45) 100%
+  );
+}
+
+.book-spine-crease {
+  box-shadow: 
+    inset 25px 0 35px -15px rgba(0, 0, 0, 0.45),
+    inset -25px 0 35px -15px rgba(0, 0, 0, 0.45);
+}
+
+/* Authentic aged manuscript parchment */
+.bg-manuscript {
+  background-color: #f7edd7;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.45) 0%, transparent 80%),
+    radial-gradient(circle at 10% 20%, rgba(139, 94, 60, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(139, 94, 60, 0.08) 0%, transparent 60%),
+    radial-gradient(#b89358 0.6px, transparent 0.6px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+}
+
+/* Wax seal 3D bevel & stamp */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #b91c1c, #7f1d1d 60%, #450a0a);
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.35),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.7),
+    0 8px 25px rgba(0, 0, 0, 0.75),
+    0 0 20px rgba(185, 28, 28, 0.4);
+}
+
+/* Antique gold leaf stamping */
+.gold-foil-text {
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 35%, #d97706 70%, #fef08a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.8));
+}
+
+/* Drop-cap illuminated manuscript first letter */
+.drop-cap::first-letter {
+  font-family: var(--font-cinzel-dec);
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  color: #831843;
+  text-shadow: 2px 2px 0 #fde68a, 3px 3px 0 rgba(0,0,0,0.15);
+}
+
+/* Magical glow animations */
+@keyframes magical-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes magical-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.8));
+  }
+}
+
+@keyframes seal-hover-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 45px rgba(245, 158, 11, 0.8);
+  }
+}
+
+.animate-seal-pulse {
+  animation: seal-hover-pulse 2.4s ease-in-out infinite;
+}
+
+.animate-magical-float {
+  animation: magical-float 6s ease-in-out infinite;
+}
+
+.animate-magical-pulse {
+  animation: magical-pulse 3s ease-in-out infinite;
+}
+
+.scanline-effect::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
+  z-index: 10;
+  background-size: 100% 3px, 4px 100%;
+  pointer-events: none;
+}
+
+/* Floating background keyframes */
+@keyframes cyber-drift-float {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(18px, -24px, 0) rotate(2.5deg); }
+  50% { transform: translate3d(-14px, -45px, 0) rotate(-1.5deg); }
+  75% { transform: translate3d(12px, -20px, 0) rotate(1.8deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@keyframes cyber-drift-diagonal {
+  0% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  33% { transform: translate3d(-25px, -30px, 0) rotate(1.5deg); }
+  66% { transform: translate3d(20px, -55px, 0) rotate(-3deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+}
+
+@keyframes parchment-flutter {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(3deg) skew(0deg, 0deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+  }
+  35% {
+    transform: translate3d(-18px, -32px, 0) rotate(-4deg) skew(1deg, -1deg);
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.75));
+  }
+  70% {
+    transform: translate3d(14px, -18px, 0) rotate(5deg) skew(-1deg, 1deg);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
+  }
+}
+
+@keyframes glowing-cipher-pulse {
+  0%, 100% {
+    opacity: 0.32;
+    filter: drop-shadow(0 0 6px rgba(243, 208, 105, 0.35));
+  }
+  50% {
+    opacity: 0.68;
+    filter: drop-shadow(0 0 16px rgba(243, 208, 105, 0.85)) drop-shadow(0 0 24px rgba(56, 189, 248, 0.4));
+  }
+}
+
+@keyframes glowing-math-pulse {
+  0%, 100% {
+    opacity: 0.28;
+    filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.3));
+  }
+  50% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.8)) drop-shadow(0 0 20px rgba(197, 155, 39, 0.35));
+  }
+}
+
+.animate-cyber-drift { animation: cyber-drift-float 14s ease-in-out infinite; }
+.animate-cyber-drift-alt { animation: cyber-drift-diagonal 18s ease-in-out infinite; }
+.animate-parchment-flutter { animation: parchment-flutter 12s ease-in-out infinite; }
+.animate-cipher-glow { animation: glowing-cipher-pulse 4.5s ease-in-out infinite; }
+.animate-math-glow { animation: glowing-math-pulse 5.5s ease-in-out infinite; }
+
+/* AI Core Animations */
+@keyframes ai-ring-spin-clockwise { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes ai-ring-spin-counter { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+@keyframes ai-laser-sweep { 0% { top: 0%; opacity: 0.8; } 50% { top: 100%; opacity: 1; } 100% { top: 0%; opacity: 0.8; } }
+@keyframes ai-core-surge {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(16, 185, 129, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.4); }
+  50% { transform: scale(1.08); box-shadow: 0 0 45px rgba(16, 185, 129, 0.8), 0 0 70px rgba(56, 189, 248, 0.6), inset 0 0 30px rgba(243, 208, 105, 0.6); }
+}
+
+.animate-ai-spin { animation: ai-ring-spin-clockwise 20s linear infinite; }
+.animate-ai-spin-fast { animation: ai-ring-spin-clockwise 6s linear infinite; }
+.animate-ai-spin-reverse { animation: ai-ring-spin-counter 15s linear infinite; }
+.animate-ai-laser { animation: ai-laser-sweep 2.4s ease-in-out infinite; }
+.animate-ai-core-surge { animation: ai-core-surge 3s ease-in-out infinite; }
+
+/* Grimoire Cover Animations */
+@keyframes gold-shimmer-sweep { 0% { transform: translateX(-150%) rotate(25deg); } 100% { transform: translateX(250%) rotate(25deg); } }
+.animate-shimmer-sweep { animation: gold-shimmer-sweep 3.5s ease-in-out infinite; }
+
+@keyframes book-ambient-breathe {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 35px rgba(197, 155, 39, 0.25)) drop-shadow(0 25px 50px rgba(0, 0, 0, 0.95)); }
+  50% { transform: scale(1.006); filter: drop-shadow(0 0 55px rgba(243, 208, 105, 0.45)) drop-shadow(0 30px 60px rgba(0, 0, 0, 0.98)); }
+}
+.animate-book-breathe { animation: book-ambient-breathe 7s ease-in-out infinite; }
+
+@keyframes magical-ripple-expand {
+  0% { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
+  70% { opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(4.5); opacity: 0; }
+}
+.animate-magical-ripple { animation: magical-ripple-expand 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes light-beam-fan {
+  0% { opacity: 0; transform: scaleX(0.2) skewY(-5deg); }
+  40% { opacity: 0.9; transform: scaleX(1.3) skewY(0deg); }
+  100% { opacity: 0; transform: scaleX(2) skewY(5deg); }
+}
+.animate-light-beam { animation: light-beam-fan 1.2s ease-out forwards; }
+
+@keyframes rune-mandala-spin { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+.animate-rune-mandala { animation: rune-mandala-spin 24s linear infinite; }
+
+@keyframes seal-crest-float {
+  0%, 100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 15px rgba(243, 208, 105, 0.4)); }
+  50% { transform: translateY(-4px) scale(1.02); filter: drop-shadow(0 0 25px rgba(254, 240, 138, 0.7)); }
+}
+.animate-seal-float { animation: seal-crest-float 4s ease-in-out infinite; }
+
+/* Subtle Atmosphere Animations */
+@keyframes candle-subtle-flicker {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6)) drop-shadow(0 0 16px rgba(245, 158, 11, 0.35)); transform: scale(1); }
+  25% { opacity: 0.75; filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.45)) drop-shadow(0 0 12px rgba(245, 158, 11, 0.25)); transform: scale(0.97) translateY(0.5px); }
+  50% { opacity: 0.95; filter: drop-shadow(0 0 11px rgba(251, 191, 36, 0.75)) drop-shadow(0 0 20px rgba(245, 158, 11, 0.45)); transform: scale(1.03) translateY(-0.5px); }
+  75% { opacity: 0.8; filter: drop-shadow(0 0 7px rgba(251, 191, 36, 0.5)) drop-shadow(0 0 14px rgba(245, 158, 11, 0.3)); transform: scale(0.99); }
+}
+.animate-candle-flicker { animation: candle-subtle-flicker 3.2s ease-in-out infinite; }
+
+@keyframes mist-drift {
+  0% { transform: translateX(-3%) scaleY(1); opacity: 0.16; }
+  50% { transform: translateX(3%) scaleY(1.08); opacity: 0.26; }
+  100% { transform: translateX(-3%) scaleY(1); opacity: 0.16; }
+}
+.animate-mist-drift { animation: mist-drift 18s ease-in-out infinite; }
+
+@keyframes golden-mote-drift {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-40px) translateX(12px); opacity: 0; }
+}
+.animate-mote-drift { animation: golden-mote-drift 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-candle-flicker,
+  .animate-mist-drift,
+  .animate-mote-drift,
+  .animate-book-breathe {
+    animation: none !important;
+  }
+}
